@@ -9,6 +9,9 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
+  // When deploying to a project GitHub Pages site (https://<user>.github.io/<repo>/)
+  // you should set the `base` to the repository name so built assets resolve correctly.
+  base: mode === 'development' ? '/' : '/Eloi_Coaching/',
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
