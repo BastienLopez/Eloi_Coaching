@@ -9,13 +9,31 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  // When deploying to a project GitHub Pages site (https://<user>.github.io/<repo>/)
-  // you should set the `base` to the repository name so built assets resolve correctly.
-  base: mode === 'development' ? '/' : '/Eloi_Coaching/',
-  plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+
+  /**
+   * BASE PATH CONFIGURATION
+   * ------------------------
+   * En développement → base = '/'
+   * En production (GitHub Pages) → base = '/Eloi_Coaching/'
+   * Cela permet de servir correctement les assets à l’URL :
+   * https://bastienlopez.github.io/Eloi_Coaching/
+   */
+  base: mode === "development" ? "/" : "/Eloi_Coaching/",
+
+  plugins: [
+    react(),
+    // Plugin "lovable-tagger" uniquement en dev pour éviter les erreurs en prod
+    ...(mode === "development" ? [componentTagger()] : []),
+  ],
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
     },
+  },
+
+  build: {
+    outDir: "dist",
+    emptyOutDir: true,
   },
 }));
