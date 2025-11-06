@@ -36,7 +36,8 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install dependencies
-        run: npm ci
+        # User requested `npm i` specifically; `npm install` (same as `npm i`) is used here.
+        run: npm install
 
       - name: Build
         env:
