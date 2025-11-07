@@ -8,7 +8,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <section id="main" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -28,7 +28,7 @@ export const Hero = () => {
             <span className="text-accent">Libère ton potentiel.</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90 font-medium">
-            Coaching sportif & suivi ostéopathique personnalisé avec Eloi — Reims & Paris
+            Coaching sportif & suivi ostéopathique personnalisé avec Eloi — Paris & Reims
           </p>
           <Button 
             variant="hero"

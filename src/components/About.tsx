@@ -39,7 +39,7 @@ export const About = () => {
           {/* Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-black mb-6">
-              À propos <span className="text-accent">d'Eloi</span>
+            <span className="text-accent">Eloi - Coach Sportif & Ostéo</span>
             </h2>
             <p className="text-lg mb-6 text-muted-foreground leading-relaxed">
               Coach diplômé et ostéopathe D.O., Eloi combine deux expertises complémentaires pour offrir 

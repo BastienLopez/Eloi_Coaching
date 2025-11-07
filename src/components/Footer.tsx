@@ -1,13 +1,14 @@
-import { Instagram, Mail, MessageCircle, Phone } from "lucide-react";
+import { Instagram, Github, Mail, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
   const socialLinks = [
-    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/eloi_coachsteo/" }
+    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/eloi_coachsteo/" },
+    { icon: Github, label: "GitHub", href: "https://github.com/BastienLopez" }
   ];
 
-  const handleWhatsApp = () => {
-    window.open('https://wa.me/33600000000', '_blank');
+  const handleInsta = () => {
+    window.open('https://www.instagram.com/eloi_coachsteo/', '_blank');
   };
 
   return (
@@ -33,6 +34,8 @@ export const Footer = () => {
                   key={index}
                   href={social.href}
                   aria-label={social.label}
+                  target="_blank"
+                  rel="noreferrer noopener"
                   className="w-10 h-10 rounded-lg bg-primary-foreground/10 hover:bg-accent hover:text-accent-foreground transition-all flex items-center justify-center"
                 >
                   <social.icon className="w-5 h-5" />
@@ -48,9 +51,9 @@ export const Footer = () => {
         </div>
       </div>
 
-      {/* Floating WhatsApp Button */}
+      {/* Floating Insta Button */}
       <button
-        onClick={handleWhatsApp}
+        onClick={handleInsta}
         className="fixed bottom-6 right-6 w-14 h-14 bg-gradient-energy rounded-full shadow-glow flex items-center justify-center hover:scale-110 transition-transform z-50"
         aria-label="Contact WhatsApp"
       >

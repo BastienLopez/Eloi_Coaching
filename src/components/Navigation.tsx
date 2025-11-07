@@ -44,7 +44,7 @@ export const Navigation = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="text-xl font-black">
-            Eloi <span className="text-accent">Coach</span>
+            Eloi <span className="text-accent">CoachStéo</span>
           </a>
 
           <div className="hidden md:flex items-center gap-8">
