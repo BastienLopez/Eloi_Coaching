@@ -27,7 +27,7 @@ export const Location = () => {
 
             <div className="aspect-video rounded-xl overflow-hidden">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d167997.43311831632!2d3.8787558!3d49.258329!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e974c20a0484c9%3A0x40c14484fb28b30!2sReims!5e0!3m2!1sfr!2sfr!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12845.68256550015!2d2.5379438771554206!3d48.82782196740195!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e60e6baca80c41%3A0x6ca1b4aa51e251bc!2s94350%20Villiers-sur-Marne!5e1!3m2!1sfr!2sfr!4v1762476256514!5m2!1sfr!2sfr"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

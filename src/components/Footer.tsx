@@ -1,10 +1,9 @@
-import { Instagram, Linkedin, Mail, MessageCircle, Phone } from "lucide-react";
+import { Instagram, Mail, MessageCircle, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 export const Footer = () => {
   const socialLinks = [
-    { icon: Instagram, label: "Instagram", href: "#" },
-    { icon: Linkedin, label: "LinkedIn", href: "#" },
+    { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/eloi_coachsteo/" }
   ];
 
   const handleWhatsApp = () => {
@@ -25,21 +24,6 @@ export const Footer = () => {
             </p>
           </div>
 
-          {/* Contact */}
-          <div>
-            <h4 className="font-bold mb-4">Contact</h4>
-            <div className="space-y-2">
-              <a href="mailto:contact@eloicoach.fr" className="flex items-center gap-2 text-primary-foreground/80 hover:text-accent transition-colors">
-                <Mail className="w-4 h-4" />
-                contact@eloicoach.fr
-              </a>
-              <a href="tel:+33600000000" className="flex items-center gap-2 text-primary-foreground/80 hover:text-accent transition-colors">
-                <Phone className="w-4 h-4" />
-                06 00 00 00 00
-              </a>
-            </div>
-          </div>
-
           {/* Social */}
           <div>
             <h4 className="font-bold mb-4">Réseaux sociaux</h4>
@@ -56,19 +40,6 @@ export const Footer = () => {
               ))}
             </div>
           </div>
-        </div>
-
-        {/* WhatsApp Button */}
-        <div className="border-t border-primary-foreground/10 pt-8 mb-8">
-          <Button 
-            onClick={handleWhatsApp}
-            variant="hero"
-            size="lg"
-            className="w-full md:w-auto"
-          >
-            <MessageCircle className="mr-2 h-5 w-5" />
-            Contact rapide WhatsApp
-          </Button>
         </div>
 
         {/* Copyright */}
