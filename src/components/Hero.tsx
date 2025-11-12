@@ -1,22 +1,34 @@
 import heroImage from "@/assets/hero-coach.jpg";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { useEffect, useRef } from "react";
 
 export const Hero = () => {
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const imgRef = useRef<HTMLImageElement | null>(null);
+
+  useEffect(() => {
+    // set fetchpriority attribute directly to avoid TS/JSX prop warnings
+    try {
+      imgRef.current?.setAttribute('fetchpriority', 'high');
+    } catch (e) {
+      // ignore if not supported
+    }
+  }, []);
+
   return (
   <section id="main" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src={heroImage} 
-          alt="Eloi coaching session" 
+        <img
+          ref={imgRef}
+          src={heroImage}
+          alt="Eloi coaching session"
           className="w-full h-full object-cover"
           loading="eager"
-          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
       </div>
