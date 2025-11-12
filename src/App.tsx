@@ -11,6 +11,10 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
+      {/* Skip to main content for keyboard navigation */}
+      <a href="#main" className="skip-to-content">
+        Aller au contenu principal
+      </a>
       <Toaster />
       <Sonner />
       <BrowserRouter basename={import.meta.env.BASE_URL.replace(/\/$/, "")}>

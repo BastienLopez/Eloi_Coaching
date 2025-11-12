@@ -3,6 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- Prevent FOUC: Apply dark theme before React hydration -->
+    <script>
+      (function() {
+        const theme = localStorage.getItem('theme') || 'dark';
+        if (theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+    
     <title>Eloi Coach Sport & Ostéo - Coaching Sportif et Ostéopathie à Reims et Paris</title>
     <meta name="description" content="Transforme ton corps avec Eloi. Coach sportif diplômé et ostéopathe à Reims et Paris. Spécialiste Hyrox, remise en forme et prévention des blessures." />
     <meta name="author" content="Eloi Coach Sport & Ostéo" />

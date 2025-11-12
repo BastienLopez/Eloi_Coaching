@@ -39,11 +39,13 @@ export const Navigation = () => {
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background/80 backdrop-blur-md shadow-card ${
         isScrolled ? "bg-background/95" : ""
       }`}
+      role="navigation"
+      aria-label="Navigation principale"
     >
       <div className="container px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="text-xl font-black">
+          <a href="#" className="text-xl font-black" aria-label="Retour à l'accueil">
             Eloi <span className="text-accent">CoachStéo</span>
           </a>
 
@@ -62,10 +64,11 @@ export const Navigation = () => {
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="rounded-full"
+              aria-label={`Basculer vers le thème ${theme === "dark" ? "clair" : "sombre"}`}
             >
               <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-              <span className="sr-only">Toggle theme</span>
+              <span className="sr-only">Changer de thème</span>
             </Button>
 
             {/* Mobile menu button */}
@@ -74,6 +77,9 @@ export const Navigation = () => {
               size="icon"
               className="md:hidden rounded-full"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label={isMobileMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+              aria-expanded={isMobileMenuOpen}
+              aria-controls="mobile-menu"
             >
               {isMobileMenuOpen ? (
                 <X className="h-5 w-5" />
@@ -86,7 +92,11 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 py-4 border-t border-border">
+          <div 
+            className="md:hidden mt-4 py-4 border-t border-border" 
+            id="mobile-menu"
+            role="menu"
+          >
             <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <AnchorLink

@@ -33,18 +33,20 @@ export const Programs = () => {
 
   return (
     <section id="programs" className="py-20 md:py-32 relative overflow-hidden">
-      {/* Background Pattern */}
+      {/* Background Pattern with better overlay for text readability */}
       <div className="absolute inset-0 opacity-20 dark:opacity-10">
         <div className="absolute inset-0" style={{
           backgroundImage: `url(${hyroxImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center'
         }} />
+        {/* Add subtle overlay to improve text contrast */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/20 to-background/40" />
       </div>
 
       <div className="container px-4 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black mb-4">
+          <h2 className="text-4xl md:text-5xl font-black mb-4 drop-shadow-sm">
             Programmes <span className="text-accent">d'accompagnement</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
@@ -56,23 +58,23 @@ export const Programs = () => {
           {programs.map((program, index) => (
             <Card 
               key={index}
-              className={`p-6 hover:shadow-glow transition-all duration-300 ${
-                program.featured ? 'border-accent border-2' : ''
+              className={`p-6 hover:shadow-glow hover:-translate-y-1 transition-all duration-300 backdrop-blur-sm ${
+                program.featured ? 'border-accent border-2 bg-card/95' : 'bg-card/90'
               }`}
             >
-              <div className={`w-14 h-14 rounded-xl mb-4 flex items-center justify-center ${
-                program.featured ? 'bg-gradient-energy' : 'bg-accent/10'
+              <div className={`w-14 h-14 rounded-xl mb-4 flex items-center justify-center transition-transform group-hover:scale-110 ${
+                program.featured ? 'bg-gradient-energy shadow-md' : 'bg-accent/10'
               }`}>
                 <program.icon className={`w-7 h-7 ${
                   program.featured ? 'text-accent-foreground' : 'text-accent'
-                }`} />
+                }`} aria-hidden="true" />
               </div>
               <h3 className="text-xl font-bold mb-2">{program.title}</h3>
-              <p className="text-muted-foreground mb-4">{program.description}</p>
-              <ul className="space-y-2">
+              <p className="text-muted-foreground mb-4 leading-relaxed">{program.description}</p>
+              <ul className="space-y-2" role="list">
                 {program.features.map((feature, idx) => (
                   <li key={idx} className="flex items-center gap-2 text-sm">
-                    <div className="w-1.5 h-1.5 rounded-full bg-accent" />
+                    <div className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" aria-hidden="true" />
                     <span>{feature}</span>
                   </li>
                 ))}

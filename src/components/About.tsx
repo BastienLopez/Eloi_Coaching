@@ -36,6 +36,9 @@ export const About = () => {
                 src={eloiPortrait} 
                 alt="Eloi - Coach sportif et ostéopathe" 
                 className="w-full h-full object-cover"
+                loading="lazy"
+                width="600"
+                height="600"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-energy rounded-2xl -z-10" />
@@ -61,12 +64,15 @@ export const About = () => {
             {/* Highlights - Grid 2x2 */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {highlights.map((item, index) => (
-                <div key={index} className="flex gap-3 items-start p-4 rounded-xl bg-background/50 hover:bg-background transition-colors">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <item.icon className="w-5 h-5 text-accent" />
+                <div
+                  key={index}
+                  className="group flex gap-3 items-start p-6 rounded-2xl bg-card border border-border shadow-sm hover:shadow-glow hover:border-accent/50 transition-all duration-200"
+                >
+                  <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center transition-transform duration-200 group-hover:scale-105">
+                    <item.icon className="w-6 h-6 text-accent" aria-hidden="true" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <h3 className="font-bold text-base mb-1">{item.title}</h3>
+                    <h3 className="font-bold text-base mb-1 text-foreground">{item.title}</h3>
                     <p className="text-sm text-muted-foreground leading-snug">{item.description}</p>
                   </div>
                 </div>

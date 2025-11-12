@@ -15,6 +15,8 @@ export const Hero = () => {
           src={heroImage} 
           alt="Eloi coaching session" 
           className="w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
       </div>

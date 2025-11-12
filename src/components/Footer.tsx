@@ -13,7 +13,7 @@ export const Footer = () => {
 
   return (
     <footer className="bg-primary text-primary-foreground">
-      <div className="container px-4 py-12">
+      <div className="container px-4 py-6">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Branding */}
           <div>
@@ -45,10 +45,7 @@ export const Footer = () => {
           </div>
         </div>
 
-        {/* Copyright */}
-        <div className="border-t border-primary-foreground/10 pt-8 text-center text-sm text-primary-foreground/60">
-          <p>© 2025 Eloi Coach Sport & Ostéo – Tous droits réservés</p>
-        </div>
+        {/* Copyright removed as requested (keeps cleaner footer) */}
       </div>
 
       {/* Floating Insta Button */}
