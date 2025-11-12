@@ -1,17 +1,22 @@
 import eloiPortrait from "@/assets/eloi-portrait.jpg";
-import { Award, Heart, Target } from "lucide-react";
+import { Award, Heart, Target, User } from "lucide-react";
 
 export const About = () => {
   const highlights = [
     {
-      icon: Award,
-      title: "Diplômé et certifié",
-      description: "Diplôme en ostéopathie et coaching sportif"
-    },
-    {
       icon: Target,
       title: "Spécialiste Hyrox",
       description: "Préparation Hyrox et renforcement fonctionnel"
+    },
+    {
+      icon: User,
+      title: "Coaching individuel",
+      description: "Accompagnement 100% personnalisé et sur-mesure"
+    },
+    {
+      icon: Award,
+      title: "Formation en cours",
+      description: "Diplôme d'ostéopathie et certification coaching sportif"
     },
     {
       icon: Heart,
@@ -39,30 +44,30 @@ export const About = () => {
           {/* Content */}
           <div>
             <h2 className="text-4xl md:text-5xl font-black mb-6">
-            <span className="text-accent">Eloi - Coach Sportif & Ostéo</span>
+              <span className="text-accent">Eloi - Coach Sportif & Ostéo</span>
             </h2>
             <p className="text-lg mb-6 text-muted-foreground leading-relaxed">
-              Coach diplômé et ostéopathe D.O., Eloi combine deux expertises complémentaires pour offrir 
-              un accompagnement complet et unique. Passionné par le sport et la santé, il aide chaque personne 
-              à atteindre ses objectifs tout en préservant son corps des blessures.
+              Futur ostéopathe D.O et coach sportif certifié, je combine deux expertises complémentaires 
+              pour offrir un accompagnement complet et unique. Passionné par le sport et la santé, 
+              j'accompagne chaque personne vers ses objectifs tout en préservant son corps des blessures.
             </p>
             <p className="text-lg mb-8 text-muted-foreground leading-relaxed">
               Que tu souhaites te remettre en forme, préparer une compétition Hyrox, soulager des douleurs 
-              chroniques ou simplement optimiser tes performances, Eloi adapte chaque séance à ton niveau, 
-              tes besoins et tes ambitions. Son approche holistique garantit des résultats durables en harmonie 
+              chroniques ou simplement optimiser tes performances, j'adapte chaque séance à ton niveau, 
+              tes besoins et tes ambitions. Mon approche holistique garantit des résultats durables en harmonie 
               avec ton corps.
             </p>
 
-            {/* Highlights */}
-            <div className="space-y-4">
+            {/* Highlights - Grid 2x2 */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {highlights.map((item, index) => (
-                <div key={index} className="flex gap-4 items-start">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
-                    <item.icon className="w-6 h-6 text-accent" />
+                <div key={index} className="flex gap-3 items-start p-4 rounded-xl bg-background/50 hover:bg-background transition-colors">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                    <item.icon className="w-5 h-5 text-accent" />
                   </div>
-                  <div>
-                    <h3 className="font-bold text-lg mb-1">{item.title}</h3>
-                    <p className="text-muted-foreground">{item.description}</p>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-base mb-1">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground leading-snug">{item.description}</p>
                   </div>
                 </div>
               ))}
